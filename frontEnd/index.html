@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Stock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Control de Stock</h1>
+  <form id="form-producto">
+    <label for="nombre-producto">Nombre del producto:</label>
+    <input type="text" id="nombre-producto" name="nombre-producto">
+    <br>
+    <label for="cantidad-producto">Cantidad del producto:</label>
+    <input type="number" id="cantidad-producto" name="cantidad-producto">
+    <br>
+    <button id="btn-agregar-producto">Agregar producto</button>
+  </form>
+  <table id="tabla-productos">
+    <thead>
+      <tr>
+        <th>Nombre del producto</th>
+        <th>Cantidad del producto</th>
+      </tr>
+    </thead>
+    <tbody id="tbody-productos">
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

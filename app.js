@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes/index');
-const PORT = 3000;
+const productosController = require('./controllers/productosController');
 
 app.use(express.json());
-app.use('./api', routes);
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT, ()=> {
-     console.log(`Servidor corriendo en http://localhost:${PORT}`)
+app.use('/api/productos', productosController);
+
+app.listen(3000, () => {
+  console.log('Servidor escuchando en el puerto 3000');
 });

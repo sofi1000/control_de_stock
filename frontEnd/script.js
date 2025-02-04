@@ -1,23 +1,22 @@
-let productos = [];
+const productos = [
+  { nombre: 'Producto 1', cantidad: 10 },
+  { nombre: 'Producto 2', cantidad: 20 },
+];
 
-// Función para agregar un producto
 function agregarProducto(nombre, cantidad) {
-  const producto = {
-    nombre,
-    cantidad
-  };
-  productos.push(producto);
+  const nuevoProducto = { nombre, cantidad };
+  productos.push(nuevoProducto);
   actualizarTabla();
 }
 
-// Función para actualizar la tabla de productos
+
 function actualizarTabla() {
-  const tbody = document.getElementById("tbody-productos");
-  tbody.innerHTML = "";
+  const tbody = document.getElementById('tbody-productos');
+  tbody.innerHTML = '';
   productos.forEach((producto) => {
-    const row = document.createElement("tr");
-    const nombreCell = document.createElement("td");
-    const cantidadCell = document.createElement("td");
+    const row = document.createElement('tr');
+    const nombreCell = document.createElement('td');
+    const cantidadCell = document.createElement('td');
     nombreCell.textContent = producto.nombre;
     cantidadCell.textContent = producto.cantidad;
     row.appendChild(nombreCell);
@@ -26,9 +25,12 @@ function actualizarTabla() {
   });
 }
 
-// Evento para agregar un producto
-document.getElementById("btn-agregar-producto").addEventListener("click", () => {
-  const nombre = document.getElementById("nombre-producto").value;
-  const cantidad = parseInt(document.getElementById("cantidad-producto").value);
+
+document.getElementById('btn-agregar-producto').addEventListener('click', (e) => {
+  e.preventDefault();
+  const nombre = document.getElementById('nombre-producto').value;
+  const cantidad = parseInt(document.getElementById('cantidad-producto').value);
   agregarProducto(nombre, cantidad);
 });
+
+actualizarTabla();

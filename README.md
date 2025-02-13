@@ -1,4 +1,4 @@
-### Control de Stock 
+# Control de Stock 
 
 ## Esta API REST esta diseñada para gestionar el control de stock de una tienda de productos varios.
 ## Permite a los usuarios cread, leer, actualizar y eliminar productos del 
